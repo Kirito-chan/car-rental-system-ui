@@ -1,0 +1,12 @@
+.car-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+:host ::ng-deep mat-grid-list mat-grid-tile:nth-child(3) .mat-grid-tile-content {
+  justify-content: flex-end;
+  align-items: flex-start;
+}

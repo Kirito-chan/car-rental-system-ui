@@ -1,0 +1,27 @@
+mat-toolbar {
+  padding: 0 10vw;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.active-link {
+  color: #ff9800 !important; /* Orange color for active link */
+  text-decoration: underline;
+}

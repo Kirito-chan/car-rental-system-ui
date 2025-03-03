@@ -1,0 +1,12 @@
+<div
+  class="car-list"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onScroll()"
+>
+  <h2>Cars</h2>
+  @for (car of cars; track car.id) {
+  <app-car-tile [car]="car" (carDelete)="deleteCar($event)" (carEdit)="editCar($event)"></app-car-tile>
+  }
+</div>

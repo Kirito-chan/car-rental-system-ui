@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-grid-list cols="3" rowHeight="260px">
+    <mat-grid-tile>
+      <img src="assets/car.png" alt="Car image" class="car-image" />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-car-tile-details
+        [car]="car"
+        (carEdit)="carEdit.emit($event)"
+        (carDelete)="carDelete.emit($event)"
+      ></app-car-tile-details>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-car-tile-actions
+        [car]="car"
+        (carEdit)="carEdit.emit($event)"
+        (carDelete)="carDelete.emit($event)"
+      ></app-car-tile-actions>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

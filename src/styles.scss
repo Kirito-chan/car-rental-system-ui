@@ -1,0 +1,74 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.green-check-icon {
+  color: green;
+  padding-right: 0.5em;
+}
+
+.with-icon {
+  display: flex;
+  align-items: center;
+}
+
+// Common button styling
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; // Space between icon and text
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+
+  mat-icon {
+    font-size: 20px;
+  }
+}
+
+// Start Rental Button (Success/Green)
+.start-rental-button {
+  @extend .button;
+  background-color: #2e7d32 !important; // Material Green
+  margin-right: 0.5em;
+  color: white !important;
+
+  &:hover {
+    background-color: #1b5e20 !important;
+    transform: scale(1.05) !important;
+  }
+
+  &:active {
+    transform: scale(0.95) !important;
+  }
+}
+
+// Delete Button (Danger)
+.delete-button {
+  @extend .button;
+  color: #a62828 !important; // Material Red
+  margin-right: 0.5em;
+  margin-left: auto !important;
+
+  &:hover {
+    background-color: #a62828 !important;
+    transform: scale(1.05 !important);
+    color: white !important;
+  }
+
+  &:active {
+    transform: scale(0.95) !important;
+  }
+}

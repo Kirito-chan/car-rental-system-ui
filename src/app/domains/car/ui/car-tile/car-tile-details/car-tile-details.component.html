@@ -1,0 +1,28 @@
+<div class="car-details">
+  <h3>{{ car.make }} {{ car.model }}</h3>
+  <p><strong>Seats:</strong> {{ car.totalSeats }}</p>
+  <p><strong>Transmission:</strong> {{ car.isAutomaticTransmission }}</p>
+  <p>
+    <strong>Total Kilometers:</strong>
+    {{ car.totalKilometersDriven }} km
+  </p>
+  <p>
+    <strong>Status:</strong>
+    <span [ngClass]="{ rented: car.isRented, available: !car.isRented }">
+      {{ car.isRented ? "Currently Rented" : "Available" }}
+    </span>
+  </p>
+
+  <div>
+    <button
+      mat-raised-button
+      [ngClass]="{
+        'start-rental-button': !car.isRented,
+        'delete-button': car.isRented
+      }"
+      (click)="toggleRental(car)"
+    >
+      {{ car.isRented ? "Stop Rental" : "Start Rental" }}
+    </button>
+  </div>
+</div>
