@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>Stop rental</h2>
+<mat-dialog-content>
+  <p>How many kilometers were driven ?</p>
+  <mat-form-field>
+    <mat-label>Kilometers driven</mat-label>
+    <input matInput [formControl]="kilometersDrivenControl" />
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="kilometersDrivenControl.value" cdkFocusInitial>Stop rental</button>
+</mat-dialog-actions>

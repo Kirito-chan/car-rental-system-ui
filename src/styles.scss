@@ -19,6 +19,10 @@ body {
   align-items: center;
 }
 
+.full-width {
+  width: 100%;
+}
+
 // Common button styling
 .button {
   display: inline-flex;
@@ -39,7 +43,7 @@ body {
 }
 
 // Start Rental Button (Success/Green)
-.start-rental-button {
+.success-button {
   @extend .button;
   background-color: #2e7d32 !important; // Material Green
   margin-right: 0.5em;

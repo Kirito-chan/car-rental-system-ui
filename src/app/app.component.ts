@@ -8,6 +8,4 @@ import { HeaderComponent } from './core/header/header.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'car-rental-system-ui';
-}
+export class AppComponent {}

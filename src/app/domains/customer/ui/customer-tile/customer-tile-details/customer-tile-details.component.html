@@ -1,0 +1,12 @@
+<div class="customer-details">
+  <h3>{{ customer.name }}</h3>
+  <p><strong>Email:</strong> {{ customer.email }}</p>
+  @if (customer.rentedCars?.length > 0) {
+  <p><strong>Rented cars:</strong></p>
+  <ul>
+    @for (car of customer.rentedCars; track car.id) {
+    <li>{{ car.make }} {{ car.model }}</li>
+    }
+  </ul>
+  }
+</div>

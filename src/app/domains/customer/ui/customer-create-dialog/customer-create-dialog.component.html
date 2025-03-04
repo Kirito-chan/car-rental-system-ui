@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Create customer</h2>
+<mat-dialog-content>
+  <form [formGroup]="createCustomerForm">
+    <div>
+      <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button class="success-button" [mat-dialog-close]="createCustomerForm.value" cdkFocusInitial>
+    Submit
+  </button>
+</mat-dialog-actions>

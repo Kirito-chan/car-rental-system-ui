@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-grid-list cols="3" rowHeight="260px">
+  <mat-grid-list cols="3" rowHeight="300px">
     <mat-grid-tile>
       <img src="assets/car.png" alt="Car image" class="car-image" />
     </mat-grid-tile>
@@ -8,6 +8,8 @@
         [car]="car"
         (carEdit)="carEdit.emit($event)"
         (carDelete)="carDelete.emit($event)"
+        (startRental)="startRental.emit($event)"
+        (stopRental)="stopRental.emit($event)"
       ></app-car-tile-details>
     </mat-grid-tile>
     <mat-grid-tile>

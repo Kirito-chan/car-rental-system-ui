@@ -45,9 +45,9 @@ export abstract class BaseRequestService {
     return this.http.put<T>(url, body, { headers, observe: 'response' });
   }
 
-  protected delete(endpoint: string, headers?: HttpHeaders): Observable<HttpResponse<void>> {
+  protected delete<T>(endpoint: string, params?: HttpParams, headers?: HttpHeaders): Observable<T> {
     const url = `${this.baseUrl}${this.api}${endpoint}`;
-    return this.http.delete<HttpResponse<void>>(url, { headers });
+    return this.http.delete<T>(url, { params });
   }
 
   protected addParamsToHttp(params: HttpParams, paramObject: HttpParamsObject): HttpParams {

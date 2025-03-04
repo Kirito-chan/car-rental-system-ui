@@ -1,0 +1,21 @@
+<div
+  class="customer-list"
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="1000"
+  (scrolled)="onScroll()"
+>
+  <h2>Customers</h2>
+
+  <div>
+    <button mat-button class="success-button" (click)="createCustomer()">Create new customer</button>
+  </div>
+
+  @for (customer of customers; track customer.id) {
+  <app-customer-tile
+    [customer]="customer"
+    (customerDelete)="deleteCustomer($event)"
+    (customerEdit)="editCustomer($event)"
+  ></app-customer-tile>
+  }
+</div>

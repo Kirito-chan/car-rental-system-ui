@@ -1,4 +1,4 @@
-export interface CarsListRequestParams {
+export interface PageRequestParams {
   pageNumber?: number;
   pageSize?: number;
 }

@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-grid-list cols="3" rowHeight="200px">
+    <mat-grid-tile>
+      <img src="assets/customer-avatar.png" alt="Customer profile pic" class="customer-image" />
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-customer-tile-details
+        [customer]="customer"
+        (customerEdit)="customerEdit.emit($event)"
+        (customerDelete)="customerDelete.emit($event)"
+      ></app-customer-tile-details>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <app-customer-tile-actions
+        [customer]="customer"
+        (customerEdit)="customerEdit.emit($event)"
+        (customerDelete)="customerDelete.emit($event)"
+      ></app-customer-tile-actions>
+    </mat-grid-tile>
+  </mat-grid-list>
+</mat-card>

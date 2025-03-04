@@ -3,7 +3,7 @@ export interface Car {
   make: string;
   model: string;
   totalSeats: number;
-  isAutomaticTransmission: boolean;
-  isRented: boolean;
+  automaticTransmission: boolean;
+  rented: boolean;
   totalKilometersDriven: number;
 }

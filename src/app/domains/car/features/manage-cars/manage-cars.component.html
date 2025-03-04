@@ -6,7 +6,14 @@
   (scrolled)="onScroll()"
 >
   <h2>Cars</h2>
+  <p><strong>Number of currently rented cars:</strong> {{ currentlyRentedCars$ | async }}</p>
   @for (car of cars; track car.id) {
-  <app-car-tile [car]="car" (carDelete)="deleteCar($event)" (carEdit)="editCar($event)"></app-car-tile>
+  <app-car-tile
+    [car]="car"
+    (carDelete)="deleteCar($event)"
+    (carEdit)="editCar($event)"
+    (startRental)="startRental($event)"
+    (stopRental)="stopRental($event)"
+  ></app-car-tile>
   }
 </div>

@@ -1,0 +1,27 @@
+.customer-image {
+  width: 100%;
+  max-width: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+:host ::ng-deep mat-grid-list mat-grid-tile:nth-child(3) .mat-grid-tile-content {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+:host ::ng-deep mat-grid-list mat-grid-tile:nth-child(2) .mat-grid-tile-content {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.mat-card-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.item {
+  flex-grow: 1 !important;
+  flex-basis: 300px !important;
+  margin: 10px !important;
+}
