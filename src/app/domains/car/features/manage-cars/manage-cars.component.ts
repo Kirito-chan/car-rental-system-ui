@@ -44,13 +44,13 @@ export class ManageCarsComponent {
       customerId: rental.customerId,
     };
     this.carService.startCarRental(rentalRequest).subscribe(() => {
-      this.updateCarAttribute(rental.id, true, rental.customerName);
+      this.updateCarAttributes(rental.id, true, rental.customerName);
     });
   }
 
   stopRental(stopRentalRequest: StopRentalRequest) {
     this.carService.stopCarRental(stopRentalRequest).subscribe((kilometersDriven) => {
-      this.updateCarAttribute(stopRentalRequest.carId, false, undefined, kilometersDriven);
+      this.updateCarAttributes(stopRentalRequest.carId, false, undefined, kilometersDriven);
     });
   }
 
@@ -70,7 +70,7 @@ export class ManageCarsComponent {
       .subscribe((response: CarRentalInfo[]) => (this.cars = [...this.cars, ...response]));
   };
 
-  private updateCarAttribute(
+  private updateCarAttributes(
     carId: number,
     rented: boolean,
     customerName: string | undefined,
@@ -87,7 +87,7 @@ export class ManageCarsComponent {
   private updateAllCarAttributes(updatedCar: Car) {
     this.cars = this.cars.map((car) => {
       if (car.id === updatedCar.id) {
-        return { ...updatedCar };
+        return { ...updatedCar, customerName: car.customerName };
       }
       return car;
     });
