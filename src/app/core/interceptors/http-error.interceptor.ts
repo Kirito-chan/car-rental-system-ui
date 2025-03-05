@@ -11,15 +11,11 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        console.log('tu som');
-        console.log(error);
         let errorMessage = 'An unexpected error occurred. Please try again.';
 
         if (error.error && error.error.message) {
           errorMessage = error.error.message;
         }
-
-        console.log(errorMessage);
 
         this.snackBar.open(errorMessage, 'Close', { duration: 5000, panelClass: 'error-snackbar' });
 
