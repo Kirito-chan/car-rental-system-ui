@@ -55,8 +55,11 @@ export class ManageCarsComponent {
   }
 
   deleteCar(carId: number) {
-    this.carService.deleteCar(carId).subscribe();
-    this.cars = this.cars.filter((car) => car.id !== carId);
+    this.carService.deleteCar(carId).subscribe({
+      next: () => {
+        this.cars = this.cars.filter((car) => car.id !== carId);
+      },
+    });
   }
 
   onScroll = () => {
